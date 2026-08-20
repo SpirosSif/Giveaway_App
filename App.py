@@ -1,6 +1,7 @@
 import streamlit as st
 import src.insta_api as insta_api
 import src.brightdata_api as brightdata_api
+import src.filtering_comments as filter
 import json
 import secrets
 import time
@@ -30,7 +31,7 @@ if st.button("Submit", type="primary"):
         st.write("Comments fetched:", len(comments))
 
         st.json(comments[:5])
-
+        filter.filter_users()
 st.divider()
 
 st.subheader("Giveaway Draw")

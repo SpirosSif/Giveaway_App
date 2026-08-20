@@ -13,7 +13,7 @@ def filter_users():
         if i["comment_user"] in seen_users:
             continue
        
-        if len(i.get("tagged_users_in_comment", []))==2:
+        if len(i.get("tagged_users_in_comment", []))==2 and i.get("comment_date")<="2026-08-20T14:00:00.000Z" :
             solo_users.append(i)
             seen_users.add(i["comment_user"])
             usernames.append(i["comment_user"])
@@ -37,4 +37,4 @@ def save_comments(comments,file_name):
             ensure_ascii=False
         )
 
-filter_users()
+#filter_users()
