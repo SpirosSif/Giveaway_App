@@ -23,7 +23,6 @@ def filter_users():
 
 
 def save_comments(comments,file_name):
-
     with open(
         f"data/{file_name}.json",
         "w",

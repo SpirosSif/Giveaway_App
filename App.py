@@ -5,10 +5,12 @@ import src.filtering_comments as filter
 import json
 import secrets
 import time
-
+import os
 import src.winner_is as winner_py
 
 URL = st.text_input("Insta URL")
+os.makedirs("data", exist_ok=True)
+
 if st.button("Submit", type="primary"):
     if(URL==""):
         st.write("Please enter a valid URL")
